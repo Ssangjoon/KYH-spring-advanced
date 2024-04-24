@@ -15,7 +15,7 @@ public class HelloTraceV1 {
     public TraceStatus begin(String message){
         TraceId traceId = new TraceId();
         long startTimeMs = System.currentTimeMillis();
-        log.info("[{}} {}{}", traceId.getId(), addSpace(START_PREFIX,traceId.getLevel()),message);
+        log.info("[{}] {}{}", traceId.getId(), addSpace(START_PREFIX,traceId.getLevel()),message);
         return new TraceStatus(traceId, startTimeMs, message);
     }
     public void end(TraceStatus status){
